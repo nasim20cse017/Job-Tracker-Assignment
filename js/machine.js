@@ -57,3 +57,29 @@ function moveToRejected(statusId, cardId) {
     }
 }
 
+// 3. what happened after click delete button
+function removeJob(cardId) {
+    const card = document.getElementById(cardId);
+    
+    // Find the status text inside this specific card to update counts
+    const statusText = card.querySelector('p[id^="status"]').innerText;
+
+    if (statusText === "INTERVIEW") {
+        updateInterviewCount(-1);
+    } else if (statusText === "REJECTED") {
+        updateRejectedCount(-1);
+    }
+
+    // Reduce the Total count
+    updateTotal(-1);
+
+    // Remove the card from the HTML
+    card.remove();
+
+    // Check if there are any cards left at all
+    const container = document.getElementById('main-container');
+    if (container.querySelectorAll('.job-card').length === 0) {
+        document.getElementById('no-jobs-msg').classList.remove('hidden');
+    }
+}
+
