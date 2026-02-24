@@ -27,7 +27,89 @@
             </div>
         </div>
 
-       
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-bold text-blue-900">Available Jobs</h2>
+            <p class="text-gray-500 font-medium"><span id="section-count">8</span> jobs</p>
+        </div>
 
+        <div class="flex gap-2 mb-6">
+            <button onclick="filterJobs('all')" class="btn btn-sm btn-primary">All</button>
+            <button onclick="filterJobs('interview')" class="btn btn-sm bg-white border-gray-200">Interview</button>
+            <button onclick="filterJobs('rejected')" class="btn btn-sm bg-white border-gray-200">Rejected</button>
+        </div>
+
+        <div id="main-container" class="space-y-4">
+            
+            <div id="job-1" class="job-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 relative group">
+                <button onclick="removeJob('job-1')" class="absolute top-4 right-4 text-gray-300 hover:text-red-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                </button>
+                <h3 class="text-xl font-bold text-blue-900">Mobile First Corp</h3>
+                <p class="text-gray-600 font-medium">React Native Developer</p>
+                <p class="text-gray-400 text-sm mt-1">Remote • Full-time • $130,000 - $175,000</p>
+                <p id="status-1" class="text-sm font-bold mt-2 text-blue-400 uppercase">Not Applied</p>
+                <p class="text-gray-500 mt-3 text-sm">Build cross-platform mobile applications using React Native. Work on products used by millions.</p>
+                <div class="mt-4 flex gap-2">
+                    <button onclick="moveToInterview('status-1', 'job-1')" class="btn btn-sm btn-outline btn-success">Interview</button>
+                    <button onclick="moveToRejected('status-1', 'job-1')" class="btn btn-sm btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+
+            <div id="job-2" class="job-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 relative group">
+                <button onclick="removeJob('job-2')" class="absolute top-4 right-4 text-gray-300 hover:text-red-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                </button>
+                <h3 class="text-xl font-bold text-blue-900">WebFlow Agency</h3>
+                <p class="text-gray-600 font-medium">Web Designer & Developer</p>
+                <p class="text-gray-400 text-sm mt-1">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+                <p id="status-2" class="text-sm font-bold mt-2 text-blue-400 uppercase">Not Applied</p>
+                <p class="text-gray-500 mt-3 text-sm">Create stunning web experiences for high-profile clients. Must have portfolio and experience.</p>
+                <div class="mt-4 flex gap-2">
+                    <button onclick="moveToInterview('status-2', 'job-2')" class="btn btn-sm btn-outline btn-success">Interview</button>
+                    <button onclick="moveToRejected('status-2', 'job-2')" class="btn btn-sm btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+
+            <div id="job-3" class="job-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 relative group">
+                <button onclick="removeJob('job-3')" class="absolute top-4 right-4 text-gray-300 hover:text-red-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                </button>
+                <h3 class="text-xl font-bold text-blue-900">DataViz Solutions</h3>
+                <p class="text-gray-600 font-medium">Data Visualization Specialist</p>
+                <p class="text-gray-400 text-sm mt-1">Boston, MA • Full-time • $125k - $165k</p>
+                <p id="status-3" class="text-sm font-bold mt-2 text-blue-400 uppercase">Not Applied</p>
+                <p class="text-gray-500 mt-3 text-sm">Transform complex data into compelling visualizations using D3.js and React.</p>
+                <div class="mt-4 flex gap-2">
+                    <button onclick="moveToInterview('status-3', 'job-3')" class="btn btn-sm btn-outline btn-success">Interview</button>
+                    <button onclick="moveToRejected('status-3', 'job-3')" class="btn btn-sm btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+
+            <div id="job-4" class="job-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 relative group">
+                <button onclick="removeJob('job-4')" class="absolute top-4 right-4 text-gray-300 hover:text-red-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                </button>
+                <h3 class="text-xl font-bold text-blue-900">CloudFirst Inc</h3>
+                <p class="text-gray-600 font-medium">Backend Developer</p>
+                <p class="text-gray-400 text-sm mt-1">Seattle, WA • Full-time • $140k - $190k</p>
+                <p id="status-4" class="text-sm font-bold mt-2 text-blue-400 uppercase">Not Applied</p>
+                <p class="text-gray-500 mt-3 text-sm">Design and maintain scalable backend systems using Python and AWS infrastructure.</p>
+                <div class="mt-4 flex gap-2">
+                    <button onclick="moveToInterview('status-4', 'job-4')" class="btn btn-sm btn-outline btn-success">Interview</button>
+                    <button onclick="moveToRejected('status-4', 'job-4')" class="btn btn-sm btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+
+            </div>
+
+        <div id="no-jobs-msg" class="hidden flex flex-col items-center justify-center bg-white border border-gray-100 rounded-xl p-20 shadow-sm mt-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/7486/7486744.png" alt="No Jobs" class="w-24 mb-4 opacity-50">
+            <h3 class="text-2xl font-bold text-blue-900">No jobs available</h3>
+            <p class="text-gray-400">Check back soon for new job opportunities</p>
+        </div>
+
+    </div>
+
+    <script src="./js/machine.js"></script>
 </body>
 </html>
