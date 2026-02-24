@@ -40,3 +40,20 @@ function moveToInterview(statusId, cardId) {
     }
 }
 
+// 2. what happened after click rejected button
+function moveToRejected(statusId, cardId) {
+    const statusLabel = document.getElementById(statusId);
+
+    if (statusLabel.innerText !== "REJECTED") {
+        
+        // If it was "INTERVIEW" before, subtract 1 from interview
+        if (statusLabel.innerText === "INTERVIEW") {
+            updateInterviewCount(-1);
+        }
+
+        statusLabel.innerText = "REJECTED";
+        statusLabel.className = "text-sm font-bold p-2 text-center mt-2 text-red-500 uppercase";
+        updateRejectedCount(1);
+    }
+}
+
