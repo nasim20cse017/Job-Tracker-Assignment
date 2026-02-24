@@ -20,3 +20,23 @@ function updateRejectedCount(value) {
     let current = parseInt(el.innerText);
     el.innerText = current + value;
 }
+
+
+// 1. what happened after click interview button
+function moveToInterview(statusId, cardId) {
+    const statusLabel = document.getElementById(statusId);
+    
+    // Check if it was already INTERVIEW, don't double count
+    if (statusLabel.innerText !== "INTERVIEW") {
+        
+        // If it was "REJECTED" before, subtract 1 from rejected
+        if (statusLabel.innerText === "REJECTED") {
+            updateRejectedCount(-1);
+        }
+
+        statusLabel.innerText = "INTERVIEW";
+        statusLabel.className = "text-sm font-bold p-2 text-center mt-2 text-green-500 uppercase";
+        updateInterviewCount(1);
+    }
+}
+
