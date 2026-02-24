@@ -45,6 +45,7 @@ function moveToRejected(statusId) {
         }
         statusLabel.innerText = "REJECTED";
         statusLabel.className = "text-sm font-bold p-2 text-center mt-2 text-red-500 uppercase";
+
         updateRejectedCount(1);
         refreshCurrentFilter();
     }
