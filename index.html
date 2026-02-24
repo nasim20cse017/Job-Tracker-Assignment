@@ -33,10 +33,21 @@
         </div>
 
         <div class="flex gap-2 mb-6">
-            <button onclick="filterJobs('all')" class="btn btn-sm btn-primary">All</button>
-            <button onclick="filterJobs('interview')" class="btn btn-sm bg-white border-gray-200">Interview</button>
-            <button onclick="filterJobs('rejected')" class="btn btn-sm bg-white border-gray-200">Rejected</button>
-        </div>
+    <button onclick="filterJobs('all', this)" 
+        class="filter-btn btn btn-sm bg-white border border-gray-200 text-black hover:bg-blue-500 hover:text-white">
+        All
+    </button>
+
+    <button onclick="filterJobs('interview', this)" 
+        class="filter-btn btn btn-sm bg-white border border-gray-200 text-black hover:bg-blue-500 hover:text-white">
+        Interview
+    </button>
+
+    <button onclick="filterJobs('rejected', this)" 
+        class="filter-btn btn btn-sm bg-white border border-gray-200 text-black hover:bg-blue-500 hover:text-white">
+        Rejected
+    </button>
+</div>
 
         <div id="main-container" class="space-y-4">
             
