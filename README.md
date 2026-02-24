@@ -66,11 +66,14 @@ Example:
   <li>Item 1</li>
   <li>Item 2</li>
 </ul>
-document.getElementById('list').addEventListener('click', (e) => {
+
+<script>
+document.getElementById('list').addEventListener('click', function() {
   if(e.target.tagName === 'LI') {
     console.log('You clicked:', e.target.innerText);
   }
 });
+</script>
 
 5. Difference between preventDefault() and stopPropagation()
 
