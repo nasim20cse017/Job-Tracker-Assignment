@@ -83,3 +83,36 @@ function removeJob(cardId) {
     }
 }
 
+// 4. tab filtering logic
+function filterJobs(type) {
+    const cards = document.querySelectorAll('.job-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+        const status = card.querySelector('p[id^="status"]').innerText;
+        
+        if (type === 'all') {
+            card.classList.remove('hidden');
+            visibleCount++;
+        } else if (type === 'interview' && status === 'INTERVIEW') {
+            card.classList.remove('hidden');
+            visibleCount++;
+        } else if (type === 'rejected' && status === 'REJECTED') {
+            card.classList.remove('hidden');
+            visibleCount++;
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+
+    // Update the section count (right side)
+    document.getElementById('section-count').innerText = visibleCount;
+
+    // Show empty state if no cards match the filter
+    const emptyMsg = document.getElementById('no-jobs-msg');
+    if (visibleCount === 0) {
+        emptyMsg.classList.remove('hidden');
+    } else {
+        emptyMsg.classList.add('hidden');
+    }
+}
